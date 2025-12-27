@@ -144,9 +144,9 @@ services:
     ports:
       - "8088:8088"
     environment:
-      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:-sua_chave_secreta_aqui}
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY}
       # Configurando o Postgres existente para o Superset
-      - SQLALCHEMY_DATABASE_URI=postgresql://airflow:airflow@db:5432/superset_db
+      - SQLALCHEMY_DATABASE_URI=postgresql://superset:superset@postgres:5432/superset
     user: "root"
     entrypoint: >
       /bin/sh -c "
