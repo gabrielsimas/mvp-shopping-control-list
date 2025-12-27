@@ -155,7 +155,7 @@ services:
         superset init;
         /usr/bin/run-server.sh --host 0.0.0.0 --port 8088 --with-threads"
     depends_on:
-      - db
+      - postgres
   # --- GESTÃO VISUAL ---
   portainer:
     image: portainer/portainer:latest
