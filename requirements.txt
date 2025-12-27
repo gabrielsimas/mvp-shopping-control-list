@@ -1,0 +1,23 @@
+# Orchestration & Providers
+apache-airflow-providers-google
+apache-airflow-providers-docker
+apache-airflow-providers-postgres  # Essencial para o PostgresHook e SQLAlchemy
+apache-airflow-providers-common-sql
+
+# Database & ORM
+sqlalchemy                         # O coração da nossa persistência POO
+psycopg2-binary                    # Driver para o SQLAlchemy falar com o Postgres
+sqlparse                           # Auxiliar para formatação de queries
+
+# Data Processing
+pandas                             # Para o EDA inicial e transformações leves
+pyarrow                            # Motor de alto desempenho para gerar arquivos Parquet
+duckdb >= 0.10.0                   # Ótimo para SQL em arquivos locais antes do upload
+pynessie                           # CLI/Client do Nessie para gerenciar branches via código
+
+# Cloud Storage
+google-cloud-storage               # Client oficial para o StorageAdapter
+
+# Testing & Quality
+pytest
+pytest-mock                        # Para mockar o Repository nos testes unitários
