@@ -98,6 +98,7 @@ services:
   dremio:
     image: dremio/dremio-oss:latest
     container_name: dremio
+    user: root
     ports:
       - "9047:9047"
       - "31010:31010"
@@ -107,7 +108,7 @@ services:
       # TUNING JVM VPS:
       # Heap de 2.5GB (Processamento) + 1GB Direct (Cache/IO)
       - DREMIO_JAVA_SERVER_EXTRA_OPTS=-Xms1024m -Xmx2560m -XX:MaxDirectMemorySize=1024m
-      - DREMIO_JAVA_EXTRA_OPTS=-Dauth.personal_access_tokens.enabled=true
+      - DREMIO_JAVA_EXTRA_OPTS=-Dauth.personal_access_tokens.enabled=true -Dcom.dremio.file.permission.check.disabled=true
     volumes:
       - ./data_volumes/dremio_data:/opt/dremio/data
       - ./keys/sa-vps-executor@projetos-estudo-482200-a8634a0103e3.json:/opt/dremio/keys/sa-vps-executor@projetos-estudo-482200-a8634a0103e3.json
