@@ -119,7 +119,7 @@ services:
     restart: unless-stopped
   # --- DATA CATALOG (GIT FOR DATA) ---
   nessie:
-    image: projectnessie/nessie-server:latest
+    image: ghcr.io/projectnessie/nessie:latest
     container_name: nessie
     restart: always
     depends_on:
