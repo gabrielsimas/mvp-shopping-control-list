@@ -65,3 +65,4 @@ crash.log
 id_rsa_painel
 *.ppk
 *.pub
+docs/*
