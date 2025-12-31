@@ -13,7 +13,7 @@ x-airflow-common: &airflow-common
     # OTIMIZAÇÃO VPS: Usa as 4 vCPUs para processar tarefas em paralelo
     AIRFLOW__CORE__PARALLELISM: 4
     AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: 4
-    GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/keys/sa-vps-executor@projetos-estudo-482200-a8634a0103e3.json
+    GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/keys/sa-airflow.json
     BUCKET_LANDING: ${BUCKET_LANDING}
     BUCKET_BRONZE: ${BUCKET_BRONZE}
     AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW__WEBSERVER__SECRET_KEY}
@@ -111,7 +111,7 @@ services:
       - DREMIO_JAVA_EXTRA_OPTS=-Dauth.personal_access_tokens.enabled=true -Dcom.dremio.file.permission.check.disabled=true
     volumes:
       - ./data_volumes/dremio_data:/opt/dremio/data
-      - ./keys/sa-vps-executor@projetos-estudo-482200-a8634a0103e3.json:/opt/dremio/keys/sa-vps-executor@projetos-estudo-482200-a8634a0103e3.json
+      - ./keys/sa-dremio.json:/opt/dremio/keys/sa-dremio.json
     deploy:
       resources:
         limits:
