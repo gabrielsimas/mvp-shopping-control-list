@@ -1,6 +1,6 @@
 ## **Como rodar a infraestrutura**
 ---
-### **.env no Projeto local**
+### **Conteúdo do `.env` no Projeto local**
 #### Seu arquivo `.env` precisa ter as seguintes vari?veis:
 ```console
 BUCKET_LANDING
