@@ -1,4 +1,22 @@
-## Livros que me apoiaram no aprendizado deste MVP
+## **Como rodar a infraestrutura**
+---
+### **.env no Projeto local**
+#### Seu arquivo `.env` precisa ter as seguintes vari?veis:
+```console
+BUCKET_LANDING
+BUCKET_BRONZE
+BUCKET_PRATA
+BUCKET_OURO
+SA_AIRFLOW_FILE=sa-airflow.json
+SA_DREMIO_FILE=sa-dremio.json
+PROJECT_PATH
+```
+### **Como subir o projeto**
+#### Dentro do diret?rio do seu projeto, rode esse comando:
+```console
+docker compose -f ~/data-platform/docker-compose.yml --env-file .env up -d
+```
+## **Livros que me apoiaram no aprendizado deste MVP**
 |Serviço	| Finalidade	|Tipo	|Nome	|Autores	|Publicação|	Tamanho|
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |Apache Airflow|	Automação de Pipeline|	Livro|	Data Pipelines with Apache Airflow|	Julian de Ruiter, Bas Harenslak|	mai/21|	480|
